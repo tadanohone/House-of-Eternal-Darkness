@@ -51,8 +51,10 @@ public class MoveScript : MonoBehaviour
             moveVector.x = moveSpeed * _horizontalInput;
             moveVector.z = moveSpeed * _verticalInput;
         }
-        _rb.AddForce(moveVector);
-        _rb.AddForce(moveVector);
+        if (_rb.velocity.magnitude < 10.0f)
+        {
+            _rb.AddForce(moveForceMultiplier * (moveVector - _rb.velocity)); // —Í‚ð‰Á‚¦‚é
+        }
 
         // Œü‚«
         Vector3 diff = transform.position - latestPos;
