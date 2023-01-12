@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class MoveScript : MonoBehaviour
 {
-    // ƒAƒjƒ[ƒVƒ‡ƒ“
+    // ï¿½Aï¿½jï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½
     Animator anim;
 
-    // ˆÚ“®
+    // ï¿½Ú“ï¿½
     Rigidbody _rb;
-    public bool isUseCameraDirection;    // ƒJƒƒ‰‚ÌŒü‚«‚É‡‚í‚¹‚ÄˆÚ“®‚³‚¹‚½‚¢ê‡‚Ítrue
-    public float moveSpeed;              // ˆÚ“®‘¬“x
-    public float moveForceMultiplier;    // ˆÚ“®‘¬“x‚Ì“ü—Í‚É‘Î‚·‚é’Ç]“x
+    public bool isUseCameraDirection;    // ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½ÌŒï¿½ï¿½ï¿½ï¿½Éï¿½ï¿½í‚¹ï¿½ÄˆÚ“ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡ï¿½ï¿½true
+    public float moveSpeed;              // ï¿½Ú“ï¿½ï¿½ï¿½ï¿½x
+    public float moveForceMultiplier;    // ï¿½Ú“ï¿½ï¿½ï¿½ï¿½xï¿½Ì“ï¿½ï¿½Í‚É‘Î‚ï¿½ï¿½ï¿½Ç]ï¿½x
     public GameObject mainCamera;
     float _horizontalInput;
     float _verticalInput;
     public GameObject Avatar;
 
-    // Œü‚«
+    // ï¿½ï¿½ï¿½ï¿½
     private Vector3 latestPos;
 
     void Start()
@@ -34,14 +34,14 @@ public class MoveScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        // ˆÚ“®
-        Vector3 moveVector = Vector3.zero;    // ˆÚ“®‘¬“x‚Ì“ü—Í
+        // ï¿½Ú“ï¿½
+        Vector3 moveVector = Vector3.zero;    // ï¿½Ú“ï¿½ï¿½ï¿½ï¿½xï¿½Ì“ï¿½ï¿½ï¿½
 
         if (isUseCameraDirection)
         {
             Vector3 cameraForward = mainCamera.transform.forward;
             Vector3 cameraRight = mainCamera.transform.right;
-            cameraForward.y = 0.0f;    // …•½•ûŒü‚ÉˆÚ“®‚³‚¹‚½‚¢ê‡‚Íy•ûŒü¬•ª‚ğ0‚É‚·‚é
+            cameraForward.y = 0.0f;    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÉˆÚ“ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡ï¿½ï¿½yï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0ï¿½É‚ï¿½ï¿½ï¿½
             cameraRight.y = 0.0f;
 
             moveVector = moveSpeed * (cameraRight.normalized * _horizontalInput + cameraForward.normalized * _verticalInput);
@@ -53,10 +53,10 @@ public class MoveScript : MonoBehaviour
         }
         if (_rb.velocity.magnitude < 10.0f)
         {
-            _rb.AddForce(moveForceMultiplier * (moveVector - _rb.velocity)); // —Í‚ğ‰Á‚¦‚é
+            _rb.AddForce(moveForceMultiplier * (moveVector - _rb.velocity)); // ï¿½Í‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         }
 
-        // Œü‚«
+        // ï¿½ï¿½ï¿½ï¿½
         Vector3 diff = transform.position - latestPos;
         latestPos = transform.position;
 
