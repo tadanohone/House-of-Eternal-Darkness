@@ -18,11 +18,15 @@ public class SencerScript : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(Collider collision)
+    void OnTriggerStay(Collider collision)
     {
         if(collision.gameObject.tag == "EventTrigger")
         {
-            EventManager.SceneEvent = true;
+            Debug.Log("door");
+            if (Input.GetKey(KeyCode.F))
+            {
+                EventManager.SceneEvent = true;
+            }
         }
     }
 }
