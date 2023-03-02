@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SencerScript : MonoBehaviour
 {
-    
 
     // Start is called before the first frame update
     void Start()
@@ -18,11 +17,15 @@ public class SencerScript : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(Collider collision)
+    void OnTriggerStay(Collider collision)
     {
         if(collision.gameObject.tag == "EventTrigger")
         {
-            EventManager.SceneEvent = true;
+            Debug.Log("door");
+            if (Input.GetKey(KeyCode.E))
+            {
+                EventManager.SceneEvent = true;
+            }
         }
     }
 }
