@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - EventTrigger
+  - door
   layers:
   - Default
   - TransparentFX
